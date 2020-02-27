@@ -31,3 +31,74 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+/*question1*/
+function solution(roman) {
+    let arr = [];
+    let sum = 0;
+    let obj = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    for (let i = 0; i < roman.length; i++) {
+        arr.push(obj[roman[i]]);
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] < arr[j + 1]) {
+            sum = arr[j + 1] - arr[j];
+            j++;
+        }
+        else {
+            sum += arr[j];
+        }
+
+    }
+
+    return sum;
+
+}
+
+
+console.log(solution('IV'));
+
+/*question2*/
+describe("'Convert string to camel case' kata tests", function () {
+
+    var toCamelCase = require("../convert-string-to-camel-case");
+
+    it("should return 'theStealthWarrior'", function () {
+        var result = toCamelCase("the-stealth-warrior");
+        expect(result).toBe("theStealthWarrior");
+    });
+
+    it("should return 'theStealthWarrior'", function () {
+        var result = toCamelCase("the-stealth_warrior");
+        expect(result).toBe("theStealthWarrior");
+    });
+
+    it("should return the 'TheStealthWarrior'", function () {
+        var result = toCamelCase("The_Stealth_Warrior");
+        expect(result).toBe("TheStealthWarrior");
+    });
+
+    it("should return the 'TheStealthWarrior'", function () {
+        var result = toCamelCase("The-Stealth_Warrior");
+        expect(result).toBe("TheStealthWarrior");
+    });
+
+    it("should return an empty string", function () {
+        var result = toCamelCase("");
+        expect(result).toBe("");
+    });
+
+    it("should return 'anything'", function () {
+        var result = toCamelCase("anything");
+        expect(result).toBe("anything");
+    });
+});

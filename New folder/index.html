@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title>WarmUp15</title>
+  <link rel="stylesheet" href="main.css">
+  <style type="text/css">
+    li {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <br><br><br><br><br><br><br>
+  <br><br><br>
+  <button>Create</button>
+  <ul class="list">
+    <li>
+      <div id="headerr">
+        <ul>
+          <li>main item 1</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div id="header">
+        <ul>
+          <li>main item 2</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <div id="derhea">
+    <ul>
+    </ul>
+    <input type="button" value="left" onclick="new_element1()" />
+    <input type="button" value="right" onclick="new_element()" />
+    </form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+      function new_element() {
+        $("#header ul").append('<li>Java</li>');
+      };
+      function new_element1() {
+        var Java = "Yossri";
+        $("#headerr ul").append('<li>' + Java + '</li>');
+      };
+    </script>
+</body>
+
+</html>
